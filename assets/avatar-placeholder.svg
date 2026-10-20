@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#191c22"/>
+      <stop offset="100%" stop-color="#0b0e14"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="50%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#4cd7f6"/>
+    </linearGradient>
+    <radialGradient id="ringGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="80%" stop-color="#06b6d4" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="96" fill="url(#bgGrad)" stroke="#32353b" stroke-width="2"/>
+  <circle cx="100" cy="100" r="92" fill="none" stroke="url(#accentGrad)" stroke-width="1.5" stroke-dasharray="8 4" opacity="0.6"/>
+  <!-- Ambient glow ring -->
+  <circle cx="100" cy="100" r="90" fill="url(#ringGlow)"/>
+  <!-- Stylized geometric avatar head & shoulders -->
+  <circle cx="100" cy="80" r="34" fill="#1d2026" stroke="#4cd7f6" stroke-width="2"/>
+  <path d="M48 165 C48 125, 80 122, 100 122 C120 122, 152 125, 152 165 Z" fill="#1d2026" stroke="#8b5cf6" stroke-width="2"/>
+  <!-- Cybernetic visor / glasses -->
+  <rect x="75" y="74" width="50" height="12" rx="4" fill="#06b6d4" opacity="0.85"/>
+  <line x1="82" y1="80" x2="118" y2="80" stroke="#f1f5f9" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Tech crosshairs/nodes -->
+  <circle cx="100" cy="80" r="3" fill="#4edea3"/>
+  <circle cx="48" cy="100" r="2" fill="#06b6d4"/>
+  <circle cx="152" cy="100" r="2" fill="#8b5cf6"/>
+</svg>
