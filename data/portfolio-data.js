@@ -14,22 +14,24 @@ const portfolioData = {
     address: "Dhaka, Bangladesh",
     phone: "+880 1722-615596",
     email: "abumusarohan2437@gmail.com",
-    freelancer: "freelancer.com/u/rohan5689",
-    freelancerUrl: "https://www.freelancer.com/u/rohan5689",
     github: "github.com/lEVI2889",
     githubUrl: "https://github.com/lEVI2889",
+    portfolio: "rohan.dev",
+    portfolioUrl: "https://rohan.dev",
     linkedin: "linkedin.com/in/abumusarohan",
     linkedinUrl: "https://linkedin.com/in/abumusarohan",
+    freelancer: "freelancer.com/u/rohan5689",
+    freelancerUrl: "https://www.freelancer.com/u/rohan5689",
     twitter: "@levi_ack89",
     twitterUrl: "https://x.com/levi_ack89",
     profileImage: "assets/Professional Pic Rohan_org shirt.png",
-    bio: "Computer Science and Engineering undergraduate at BRAC University and Generative AI Executive at UVTR InfoTech, where I produce AI-generated video campaigns for client brands including PRAN Ltd. and build software with the development team. I develop full-stack web applications (React, Node.js, PHP, MySQL), Android applications (Kotlin), and cryptographic security engines from scratch. Seeking software engineering and AI internships and high-impact technical roles."
+    bio: "Computer Science and Engineering undergraduate at BRAC University and Generative AI Executive at UVTR InfoTech, producing AI video campaigns for clients including PRAN Ltd. and developing software products. Experienced in full-stack web (React, Node.js, PHP, MySQL), Android (Kotlin), and cryptographic security features from scratch."
   },
 
   skills: [
     "JavaScript & Python",
     "Java & PHP",
-    "Kotlin & Jetpack Compose",
+    "Kotlin & Android",
     "React.js & Node.js",
     "SQL & Database Design",
     "Generative AI & Prompting",
@@ -38,22 +40,22 @@ const portfolioData = {
   ],
 
   languages: [
-    { name: "English", level: "Limited Working", percent: 85 },
-    { name: "German", level: "Elementary", percent: 50 },
-    { name: "Bengali", level: "Native", percent: 100 }
+    { name: "English", level: "Fluent" },
+    { name: "German", level: "Elementary" },
+    { name: "Bengali", level: "Fluent" }
   ],
 
   experience: [
     {
       role: "Generative AI Executive",
       company: "UVTR InfoTech Ltd.",
-      type: "Full-time (Hybrid)",
+      type: "Full-time · Dhaka (Hybrid)",
       period: "Aug 2026 – Present",
       location: "Dhaka, Bangladesh",
       bullets: [
-        "Design AI models and characters with Higgsfield AI and ChatGPT, producing video advertisements for client brands including PRAN Ltd.",
-        "Author prompt architectures ensuring character, scene, and product consistency from initial storyboard to broadcast release.",
-        "Contributed to core development team shipping software products for enterprise clients, including a high-volume WhatsApp bot."
+        "Design AI models and characters with Higgsfield AI and ChatGPT, producing video ads for clients including PRAN Ltd.",
+        "Write and refine prompts for consistent characters, scenes and product shots across a campaign, from first concept to the final ad.",
+        "Contributed to software engineering team building client software products, including a WhatsApp bot, the team's most recent release."
       ]
     },
     {
@@ -63,9 +65,9 @@ const portfolioData = {
       period: "Feb 2026 – Present",
       location: "Dhaka, Bangladesh",
       bullets: [
-        "Organized and hosted Diplomat's Meet 2026, convening 160 distinguished delegates, corporate partners, and student participants.",
-        "Lead operational logistics, executive team coordination, and strategic event planning across university departments.",
-        "Serve as chief liaison representing the IABC student organization to the BRAC University Student Council."
+        "Hosted Diplomat's Meet 2026, bringing together 160 participants.",
+        "Run club operations, plan events and coordinate the executive team.",
+        "Represent the student organization to the BRAC University student council."
       ]
     }
   ],
@@ -75,28 +77,37 @@ const portfolioData = {
       name: "FixSquad: Home Services Marketplace",
       technologies: "React, Node.js, Express, MySQL",
       period: "Aug – Sep 2026",
+      details: "Main contributor in a 4-person team over 4 Agile sprints. Cryptography work was a Cryptography course extension.",
       bullets: [
-        "Multi-role booking marketplace: provider dashboards, messaging, automated invoicing, ratings, and admin dispute resolution.",
-        "Architected MVC backend with raw SQL, JWT auth, rate limiting, and rigorous XSS/IDOR defense over 4 Agile sprints.",
-        "Engineered custom cryptography suite: ARX password hashing, TOTP 2FA, AES-256-GCM key management, RSA, and CBC-MAC."
+        "Main contributor in a 4-person team over 4 Agile sprints. Cryptography work was a Cryptography course extension.",
+        "Multi-role home services booking platform with automated invoicing, provider dashboards, and MVC architecture.",
+        "Engineered custom cryptography suite: ARX password hashing, TOTP 2FA, AES-256-GCM, and RSA."
       ]
     },
     {
       name: "Cadence: Music Learning App",
-      technologies: "Kotlin, Jetpack Compose, Audio DSP",
+      technologies: "Kotlin, Jetpack Compose",
       period: "Oct 2026 – Present",
       bullets: [
-        "Native Android ear-training app featuring guided pedagogical modules and an interactive visual Circle of Fifths.",
-        "Interactive digital piano keyboard synced to real-time musical notation sheet rendering."
+        "Native Android ear-training application with interactive Circle of Fifths.",
+        "Digital piano keyboard synchronized to real-time sheet notation rendering."
       ]
     },
     {
       name: "EventNexus: Event Management Platform",
-      technologies: "PHP, MySQL (Database Systems)",
+      technologies: "PHP, MySQL",
       period: "Jan 2026",
       bullets: [
         "Indoor platform with admin, host, and customer roles, automated venue clash detection, and dynamic PDF ticket issuance.",
-        "Hardened against SQL injection with strict role-based access control and parameterization."
+        "Hardened against SQL injection using mysqli_real_escape_string and role-based access control."
+      ]
+    },
+    {
+      name: "The Final Tackle & 3D Graphics",
+      technologies: "Python, OpenGL",
+      period: "2026",
+      bullets: [
+        "Football-themed game built in Python alongside real-time 3D graphics rendering implementations utilizing OpenGL and matrix transformations."
       ]
     }
   ],
@@ -114,7 +125,7 @@ const portfolioData = {
       institution: "Mirzapur Cadet College",
       period: "2016 – 2022",
       location: "Tangail, Bangladesh",
-      details: "Disciplined residential military academy education emphasizing academic merit, competitive athletics, and drill leadership."
+      details: "Disciplined residential academy education emphasizing academic excellence."
     }
   ]
 };

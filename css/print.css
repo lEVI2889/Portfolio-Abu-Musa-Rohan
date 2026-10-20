@@ -308,66 +308,37 @@ body.resume-body {
   color: #ffffff;
 }
 
-/* Language Percentage Rings */
-.language-gauges-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.25rem;
-  margin-top: 0.2rem;
-}
-
-.gauge-item {
+/* Language Text List (Clean ATS-Friendly Labels) */
+.languages-text-list {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 0.2rem;
-  flex: 1;
+  gap: 0.35rem;
+  margin-top: 0.25rem;
 }
 
-.gauge-svg-wrap {
-  position: relative;
-  width: 44px;
-  height: 44px;
+.language-text-item {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.22rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-.gauge-svg {
-  width: 44px;
-  height: 44px;
-  transform: rotate(-90deg);
+.language-text-item:last-child {
+  border-bottom: none;
 }
 
-.gauge-bg-circle {
-  fill: none;
-  stroke: rgba(255, 255, 255, 0.2);
-  stroke-width: 3.5;
-}
-
-.gauge-fill-circle {
-  fill: none;
-  stroke: #ffffff;
-  stroke-width: 3.5;
-  stroke-linecap: round;
-  transition: stroke-dashoffset 0.3s;
-}
-
-.gauge-val-text {
-  position: absolute;
+.language-name {
   font-family: var(--font-cv-display);
-  font-size: 0.65rem;
+  font-size: 0.72rem;
   font-weight: 700;
   color: #ffffff;
 }
 
-.gauge-label {
-  font-family: var(--font-cv-display);
-  font-size: 0.65rem;
-  font-weight: 600;
-  color: #ffffff;
-  text-align: center;
+.language-level {
+  font-family: var(--font-cv-body);
+  font-size: 0.68rem;
+  color: var(--cv-text-sidebar);
 }
 
 /* --- Right Column (Main Content) --- */
@@ -470,6 +441,12 @@ body.resume-body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.25rem;
+}
+
+.projects-grid-3col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.85rem;
 }
 
 .project-column-item {
