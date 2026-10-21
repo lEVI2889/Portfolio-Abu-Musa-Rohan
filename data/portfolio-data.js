@@ -16,8 +16,6 @@ const portfolioData = {
     email: "abumusarohan2437@gmail.com",
     github: "github.com/lEVI2889",
     githubUrl: "https://github.com/lEVI2889",
-    portfolio: "rohan.dev",
-    portfolioUrl: "https://rohan.dev",
     linkedin: "linkedin.com/in/abumusarohan",
     linkedinUrl: "https://linkedin.com/in/abumusarohan",
     freelancer: "freelancer.com/u/rohan5689",

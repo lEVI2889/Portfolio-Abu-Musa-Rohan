@@ -443,6 +443,75 @@ main {
   margin-top: var(--space-md);
 }
 
+/* --- Hero Contact & Actions 3x3 Grid --- */
+.hero-contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.85rem 1rem;
+  width: 100%;
+  max-width: 680px;
+  margin-top: var(--space-md);
+  box-sizing: border-box;
+}
+
+.contact-grid-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(var(--blur-sm));
+  -webkit-backdrop-filter: blur(var(--blur-sm));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-primary);
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.contact-grid-btn:hover {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(6, 182, 212, 0.5);
+  color: var(--color-primary);
+  transform: translateY(-1.5px);
+  box-shadow: 0 4px 14px rgba(6, 182, 212, 0.15);
+}
+
+.contact-grid-btn.highlight-primary {
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.22), rgba(6, 182, 212, 0.08));
+  border-color: rgba(6, 182, 212, 0.45);
+  color: #38bdf8;
+}
+
+.contact-grid-btn.highlight-primary:hover {
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.38), rgba(6, 182, 212, 0.18));
+  border-color: rgba(6, 182, 212, 0.85);
+  color: #f0f9ff;
+  box-shadow: 0 0 16px rgba(6, 182, 212, 0.35);
+}
+
+.contact-grid-btn .btn-icon {
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-grid-btn .btn-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 /* --- Module 2: Interactive Canvas ("Interactive Game Area") --- */
 .canvas-section {
   display: flex;
@@ -893,9 +962,19 @@ main {
   .hero-name {
     font-size: 1.75rem;
   }
+  .hero-contact-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.65rem;
+  }
   .footer-content {
     flex-direction: column;
     gap: var(--space-sm);
     text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-contact-grid {
+    grid-template-columns: 1fr;
   }
 }
