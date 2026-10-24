@@ -295,13 +295,18 @@ Directives:
 ## 🛠 Automation Engine Execution Protocol
 
 Each day at 10:00 PM (Asia/Dhaka), the Antigravity automation executes a fresh agent run:
-1. **Reads `.streak_state.json` and `STREAK_ROADMAP.md`** to identify the next pending day `N`.
-2. **Executes the Day `N` Prompt**:
+1. **Reads `.streak_state.json` and `STREAK_ROADMAP.md`** to identify the current progress and calculate the expected day based on the Oct 20 start date.
+2. **Zero-Skip & Backfill Guarantee**:
+   - If any days were missed due to system sleep, downtime, or restarts, the automation **never skips** them.
+   - It iterates sequentially through every missed day starting from `current_step` up to today's target day.
+   - For historical missed days, commits are backdated with `GIT_AUTHOR_DATE` and `GIT_COMMITTER_DATE` to that day's original 10:00 PM timestamp (`YYYY-MM-DD 22:00:00 +0600`) to preserve the GitHub contribution streak without gaps.
+3. **Executes Each Day's Directives**:
    - `git checkout main && git pull origin main`
    - `git checkout -b feat/day-N-<slug>`
-   - Writes/modifies the targeted code according to the day's objective.
+   - Implements the targeted feature cleanly.
    - `git add <files> && git commit -m "<day commit message>"`
    - `git push -u origin feat/day-N-<slug>`
    - Fires native Mac notification banner:
      `osascript -e 'display notification "Day N code is ready for review on branch feat/day-N-<slug>." with title "Antigravity Daily Streak" subtitle "Portfolio v2"'`
-3. **Updates `.streak_state.json`** and checks off `- [x] **Day N**...` in `STREAK_ROADMAP.md`.
+   - Updates `.streak_state.json` and checks off `- [x] **Day N**...` in `STREAK_ROADMAP.md`.
+   - Commits roadmap updates to `main` and pushes to `origin main`.
