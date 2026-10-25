@@ -9,6 +9,7 @@
   <!-- Design System Tokens & Base Stylesheet (Zero external framework dependencies) -->
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/print.css" media="print">
 </head>
 <body>
 
@@ -134,7 +135,7 @@
               <span class="btn-text">Call / WhatsApp</span>
             </a>
             <!-- 9. Download Resume -->
-            <a href="resume.html" class="contact-grid-btn highlight-primary" title="View & Download Resume">
+            <a href="resume.html" id="download-resume-btn" class="contact-grid-btn highlight-primary" title="View & Download Resume" data-action="download-resume">
               <span class="btn-icon">📄</span>
               <span class="btn-text">Download Resume</span>
             </a>
@@ -515,5 +516,12 @@
     </div>
   </footer>
 
+  <!-- Hidden CV Print Template for Dynamic In-Page Injection & Native Print -->
+  <div id="cv-print-template" class="cv-print-template" style="display: none;" aria-hidden="true"></div>
+
+  <!-- Data Model & Resume Engine Scripts -->
+  <script src="data/portfolio-data.js"></script>
+  <script src="js/resume-engine.js"></script>
+  <script src="js/navigation.js"></script>
 </body>
 </html>

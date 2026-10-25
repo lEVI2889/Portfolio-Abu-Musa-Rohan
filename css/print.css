@@ -480,16 +480,43 @@ body.resume-body {
 
 /* ==========================================================================
    STRICT SINGLE A4 PAGE NATIVE PRINT RULES (@media print)
+   Refined for multi-context printing (portfolio shell & dedicated CV page)
    ========================================================================== */
 @media print {
   @page {
-    size: A4 portrait;
+    size: 210mm 297mm;
     margin: 0;
+  }
+
+  /* Universal navbar & screen shell hiding */
+  header,
+  nav,
+  .site-header,
+  .nav-container,
+  .nav-links,
+  .nav-actions,
+  .ambient-mesh,
+  .site-wrapper > main,
+  .site-footer,
+  .resume-control-deck,
+  .deck-bar,
+  .no-print {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Strict A4 canvas box model */
+  *, *::before, *::after {
+    box-sizing: border-box !important;
   }
 
   html, body {
     width: 210mm !important;
     height: 297mm !important;
+    min-height: 297mm !important;
     max-height: 297mm !important;
     margin: 0 !important;
     padding: 0 !important;
@@ -500,19 +527,22 @@ body.resume-body {
     print-color-adjust: exact !important;
   }
 
-  .no-print {
-    display: none !important;
-  }
-
+  /* Sheet host container */
   .sheet-host {
     padding: 0 !important;
     margin: 0 !important;
     display: block !important;
     width: 210mm !important;
     height: 297mm !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
   }
 
-  .resume-sheet {
+  /* Single-page strict A4 resume sheet */
+  .resume-sheet,
+  #cv-print-template.resume-sheet {
+    display: block !important;
     width: 210mm !important;
     height: 297mm !important;
     max-height: 297mm !important;
@@ -525,8 +555,36 @@ body.resume-body {
     page-break-inside: avoid !important;
     page-break-before: avoid !important;
     page-break-after: avoid !important;
+    break-inside: avoid !important;
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
+  }
+
+  /* Support in-page dynamic print template when printed from portfolio index */
+  #cv-print-template:not(.resume-sheet) {
+    display: block !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 210mm !important;
+    height: 297mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    visibility: visible !important;
+    background: #ffffff !important;
+  }
+
+  #cv-print-template:not(.resume-sheet) > .resume-sheet {
+    display: block !important;
+    width: 210mm !important;
+    height: 297mm !important;
+    max-height: 297mm !important;
+    box-shadow: none !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    break-inside: avoid !important;
   }
 
   .cv-sidebar {

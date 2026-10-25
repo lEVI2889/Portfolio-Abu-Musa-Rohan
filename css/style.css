@@ -16,6 +16,7 @@
 html {
   font-size: 16px;
   scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
   color-scheme: dark;
 }
 
