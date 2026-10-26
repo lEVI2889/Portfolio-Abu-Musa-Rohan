@@ -9,6 +9,7 @@
   <!-- Design System Tokens & Base Stylesheet (Zero external framework dependencies) -->
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/print.css" media="print">
 </head>
 <body>
 
@@ -43,13 +44,54 @@
       </nav>
 
       <div class="nav-actions">
-        <a href="mailto:abumusarohan2437@gmail.com" class="btn btn-primary btn-sm">
+        <a href="mailto:abumusarohan2437@gmail.com" class="btn btn-primary btn-sm header-cta">
           <span class="status-dot pulsing"></span>
           <span>Let's Connect</span>
         </a>
+        <button id="mobile-menu-toggle" class="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-nav-drawer">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
       </div>
     </div>
   </header>
+
+  <!-- Mobile Navigation Drawer & Backdrop (< 768px viewports) -->
+  <div id="mobile-nav-backdrop" class="mobile-nav-backdrop" aria-hidden="true"></div>
+  <aside id="mobile-nav-drawer" class="mobile-nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation" aria-hidden="true">
+    <div class="drawer-header">
+      <div class="brand-badge">
+        <div class="brand-icon">AMR</div>
+        <div class="brand-text">
+          <span class="brand-title">ROHAN.DEV</span>
+          <span class="brand-subtitle">Navigation</span>
+        </div>
+      </div>
+      <button id="mobile-nav-close" class="drawer-close-btn" aria-label="Close navigation menu">
+        <span class="drawer-close-icon" aria-hidden="true">✕</span>
+      </button>
+    </div>
+
+    <nav class="drawer-nav" aria-label="Mobile Menu Navigation">
+      <ul class="mobile-nav-links">
+        <li><a href="#about" class="mobile-nav-link active">About</a></li>
+        <li><a href="#interactive-game-area" class="mobile-nav-link">Interactive Game Area</a></li>
+        <li><a href="#projects" class="mobile-nav-link">Projects &amp; Systems</a></li>
+        <li><a href="#experience" class="mobile-nav-link">Experience</a></li>
+        <li><a href="#education" class="mobile-nav-link">Education</a></li>
+        <li><a href="#languages" class="mobile-nav-link">Languages</a></li>
+        <li><a href="resume.html" class="mobile-nav-link">Resume</a></li>
+      </ul>
+    </nav>
+
+    <div class="drawer-footer">
+      <a href="mailto:abumusarohan2437@gmail.com" class="btn btn-primary btn-drawer-cta">
+        <span class="status-dot pulsing"></span>
+        <span>Let's Connect</span>
+      </a>
+    </div>
+  </aside>
 
   <!-- Main Content Shell -->
   <div class="site-wrapper">
@@ -134,7 +176,7 @@
               <span class="btn-text">Call / WhatsApp</span>
             </a>
             <!-- 9. Download Resume -->
-            <a href="resume.html" class="contact-grid-btn highlight-primary" title="View & Download Resume">
+            <a href="resume.html" id="download-resume-btn" class="contact-grid-btn highlight-primary" title="View & Download Resume" data-action="download-resume">
               <span class="btn-icon">📄</span>
               <span class="btn-text">Download Resume</span>
             </a>
@@ -515,5 +557,12 @@
     </div>
   </footer>
 
+  <!-- Hidden CV Print Template for Dynamic In-Page Injection & Native Print -->
+  <div id="cv-print-template" class="cv-print-template" style="display: none;" aria-hidden="true"></div>
+
+  <!-- Data Model & Resume Engine Scripts -->
+  <script src="data/portfolio-data.js"></script>
+  <script src="js/resume-engine.js"></script>
+  <script src="js/navigation.js"></script>
 </body>
 </html>

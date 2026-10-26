@@ -16,6 +16,7 @@
 html {
   font-size: 16px;
   scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
   color-scheme: dark;
 }
 
@@ -223,6 +224,197 @@ main {
   display: flex;
   align-items: center;
   gap: var(--space-sm);
+}
+
+/* --- Mobile Navigation & Hamburger Toggle Primitives --- */
+.hamburger-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  background: var(--surface-container-high);
+  border: var(--glass-border-default);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  position: relative;
+  gap: 5px;
+  transition: all 0.2s ease;
+  z-index: 1002;
+}
+
+.hamburger-btn:hover {
+  background: var(--surface-container-highest);
+  border-color: rgba(6, 182, 212, 0.4);
+}
+
+.hamburger-btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.hamburger-line {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: var(--text-primary);
+  border-radius: 2px;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease, background-color 0.2s ease;
+  transform-origin: center;
+}
+
+.hamburger-btn.is-active .hamburger-line:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+  background-color: var(--color-primary);
+}
+
+.hamburger-btn.is-active .hamburger-line:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.hamburger-btn.is-active .hamburger-line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+  background-color: var(--color-primary);
+}
+
+/* Mobile Nav Drawer & Backdrop */
+.mobile-nav-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mobile-nav-backdrop.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-nav-drawer {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 320px;
+  max-width: 86vw;
+  background: rgba(16, 19, 25, 0.95);
+  backdrop-filter: blur(var(--glass-blur-xl));
+  -webkit-backdrop-filter: blur(var(--glass-blur-xl));
+  border-left: var(--glass-border-default);
+  box-shadow: -12px 0 36px rgba(0, 0, 0, 0.65);
+  z-index: 1001;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: var(--space-md);
+  overflow-y: auto;
+}
+
+.mobile-nav-drawer.is-open {
+  transform: translateX(0);
+}
+
+.drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: var(--space-md);
+  border-bottom: var(--glass-border-default);
+  margin-bottom: var(--space-md);
+}
+
+.drawer-close-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  background: var(--surface-container-high);
+  border: var(--glass-border-default);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: 1.15rem;
+  transition: all 0.2s ease;
+}
+
+.drawer-close-btn:hover {
+  background: var(--surface-container-highest);
+  color: var(--color-primary);
+  border-color: rgba(6, 182, 212, 0.4);
+}
+
+.drawer-close-btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.drawer-nav {
+  flex: 1;
+}
+
+.mobile-nav-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-nav-link {
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.mobile-nav-link:hover {
+  color: var(--text-primary);
+  background: var(--surface-container-high);
+  border-color: var(--outline-subtle);
+}
+
+.mobile-nav-link.active {
+  color: var(--color-primary);
+  background: var(--surface-container-high);
+  border-color: rgba(6, 182, 212, 0.35);
+  font-weight: 600;
+}
+
+.drawer-footer {
+  margin-top: auto;
+  padding-top: var(--space-md);
+  border-top: var(--glass-border-default);
+}
+
+.btn-drawer-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.8rem 1rem;
+}
+
+body.drawer-open {
+  overflow: hidden;
+  touch-action: none;
 }
 
 /* --- Buttons & Action Chips --- */
@@ -947,7 +1139,14 @@ main {
 
 @media (max-width: 768px) {
   .nav-links {
-    display: none; /* Mobile navigation simplified */
+    display: none;
+  }
+  .hamburger-btn {
+    display: flex;
+  }
+  .mobile-nav-backdrop,
+  .mobile-nav-drawer {
+    display: flex;
   }
   .timeline-container {
     padding: var(--space-md);
@@ -976,5 +1175,14 @@ main {
 @media (max-width: 480px) {
   .hero-contact-grid {
     grid-template-columns: 1fr;
+  }
+  .header-cta span:last-child {
+    display: none;
+  }
+  .header-cta {
+    padding: 0.5rem 0.65rem;
+  }
+  .brand-subtitle {
+    display: none;
   }
 }
