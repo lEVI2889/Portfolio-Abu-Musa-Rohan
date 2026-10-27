@@ -9,7 +9,7 @@ Every day on schedule, the Antigravity scheduled automation runs the designated 
 ## 📊 Progress Dashboard
 - **Current Streak State**: Day 8 Active (Day 7 Complete)
 - **Repository**: `https://github.com/lEVI2889/Portfolio-Abu-Musa-Rohan.git`
-- **Schedule**: Daily at 10:00 PM (`CRON_TZ=Asia/Dhaka 0 22 * * *`)
+- **Schedule**: Every 15 minutes catch-up loop (`CRON_TZ=Asia/Dhaka */15 * * * *`, daily target: 10:00 PM)
 - **Review Target**: Remote Feature Branches (`feat/day-<N>-<slug>`)
 
 ---
