@@ -7,7 +7,7 @@ Every day on schedule, the Antigravity scheduled automation runs the designated 
 ---
 
 ## 📊 Progress Dashboard
-- **Current Streak State**: Day 9 Active (Day 8 Complete)
+- **Current Streak State**: Day 10 Active (Day 9 Complete)
 - **Repository**: `https://github.com/lEVI2889/Portfolio-Abu-Musa-Rohan.git`
 - **Schedule**: Every 15 minutes catch-up loop (`CRON_TZ=Asia/Dhaka */15 * * * *`, daily target: 10:00 PM)
 - **Review Target**: Remote Feature Branches (`feat/day-<N>-<slug>`)
@@ -131,7 +131,9 @@ Directives:
 
 ---
 
-#### - [ ] **Day 9: Accessibility Audit**
+#### - [x] **Day 9: Accessibility Audit** *(Completed)*
+- **Commit**: `d9b8160` (pushed to `feat/day-9-a11y-audit`)
+- **Directives Completed**: Added aria-labels to buttons and interactive links across `index.html` and `resume.html`, and implemented accessible focus-visible styling in `css/style.css` and `css/print.css`; pushed to feature branch.
 ```markdown
 @coordinator @gsd-executor
 Objective: Accessibility audit.
