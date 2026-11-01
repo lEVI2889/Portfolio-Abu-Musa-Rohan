@@ -45,6 +45,12 @@
   --glass-bg-raised: rgba(38, 44, 56, 0.75);
   --glass-bg-overlay: rgba(18, 21, 27, 0.85);
 
+  /* --- Frosted Glass Legacy Fallback Tokens (No backdrop-filter support) --- */
+  --glass-bg-subtle-fallback: #161a22;
+  --glass-bg-default-fallback: #1a1e27;
+  --glass-bg-raised-fallback: #222733;
+  --glass-bg-overlay-fallback: #12151b;
+
   --glass-blur-sm: 12px;
   --glass-blur-md: 16px;
   --glass-blur-lg: 24px;

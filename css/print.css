@@ -64,11 +64,18 @@ body.resume-body {
   justify-content: space-between;
   padding: 0.75rem 1.25rem;
   border-radius: 12px;
+  background-color: #1a1e27;
   background: rgba(30, 34, 43, 0.75);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .deck-bar {
+    background: #1a1e27;
+  }
 }
 
 .deck-info {

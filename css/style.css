@@ -114,6 +114,7 @@ main {
 
 /* --- Frosted Glass Surface Primitives --- */
 .glass-panel {
+  background-color: var(--glass-bg-default-fallback, #1a1e27);
   background: var(--glass-bg-default);
   backdrop-filter: blur(var(--glass-blur-md));
   -webkit-backdrop-filter: blur(var(--glass-blur-md));
@@ -126,6 +127,7 @@ main {
 }
 
 .glass-panel-subtle {
+  background-color: var(--glass-bg-subtle-fallback, #161a22);
   background: var(--glass-bg-subtle);
   backdrop-filter: blur(var(--glass-blur-sm));
   -webkit-backdrop-filter: blur(var(--glass-blur-sm));
@@ -134,12 +136,41 @@ main {
 }
 
 .glass-panel-raised {
+  background-color: var(--glass-bg-raised-fallback, #222733);
   background: var(--glass-bg-raised);
   backdrop-filter: blur(var(--glass-blur-lg));
   -webkit-backdrop-filter: blur(var(--glass-blur-lg));
   border: var(--glass-border-highlight);
   border-radius: var(--radius-lg);
   box-shadow: var(--glass-shadow-raised);
+}
+
+/* --- Legacy Browser Fallbacks for Frosted Glass Surfaces --- */
+/* Solid background colors for browsers without backdrop-filter: blur() support */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .glass-panel {
+    background: var(--glass-bg-default-fallback, #1a1e27);
+  }
+
+  .glass-panel-subtle {
+    background: var(--glass-bg-subtle-fallback, #161a22);
+  }
+
+  .glass-panel-raised {
+    background: var(--glass-bg-raised-fallback, #222733);
+  }
+
+  .site-header {
+    background: #101319;
+  }
+
+  .site-footer {
+    background: #0b0e14;
+  }
+
+  .contact-grid-btn {
+    background: #20242e;
+  }
 }
 
 .glass-panel-interactive:hover {
