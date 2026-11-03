@@ -597,7 +597,8 @@ main {
 }
 
 .game-canvas,
-.game-viewport-canvas {
+.game-viewport-canvas,
+.game-engine-canvas {
   position: absolute;
   top: 0;
   left: 0;
