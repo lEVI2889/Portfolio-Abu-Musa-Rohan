@@ -171,12 +171,15 @@
           <div class="canvas-top-bar">
             <div class="canvas-status-badge">
               <span class="status-dot pulsing"></span>
-              <span>CANVAS READY // 60 FPS</span>
+              <span id="canvas-fps-badge">CANVAS READY // 60 FPS</span>
             </div>
             <div class="canvas-status-badge" style="border-color: rgba(255,255,255,0.1); color: var(--text-secondary);">
-              <span>BUFFER: 1920x1080</span>
+              <span id="canvas-buffer-badge">BUFFER: 1920x1080</span>
             </div>
           </div>
+
+          <!-- HTML5 Canvas Element -->
+          <canvas id="game-canvas" class="game-canvas game-viewport-canvas" aria-label="Interactive Game Viewport"></canvas>
 
           <!-- Center Minimalist Slot Badge strictly indicating the ready slot -->
           <div class="canvas-center-placeholder">
@@ -193,7 +196,7 @@
           <div class="canvas-bottom-bar">
             <span>INPUT: KEYBOARD + MOUSE</span>
             <span>SHADERS: GLSL / OPENGL</span>
-            <span>STATUS: STANDBY</span>
+            <span id="canvas-status-badge">STATUS: STANDBY</span>
           </div>
         </div>
       </section>
@@ -520,5 +523,7 @@
     </div>
   </footer>
 
+  <!-- Interactive Game Engine & Canvas Context Initializer -->
+  <script src="js/game-engine.js" defer></script>
 </body>
 </html>
