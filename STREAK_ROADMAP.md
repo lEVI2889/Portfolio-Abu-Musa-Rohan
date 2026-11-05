@@ -7,7 +7,7 @@ Every day on schedule, the Antigravity scheduled automation runs the designated 
 ---
 
 ## 📊 Progress Dashboard
-- **Current Streak State**: Day 17 Active (Day 16 Complete)
+- **Current Streak State**: Day 18 Active (Day 17 Complete)
 - **Repository**: `https://github.com/lEVI2889/Portfolio-Abu-Musa-Rohan.git`
 - **Schedule**: Every 15 minutes catch-up loop (`CRON_TZ=Asia/Dhaka */15 * * * *`, daily target: 10:00 PM)
 - **Review Target**: Remote Feature Branches (`feat/day-<N>-<slug>`)
@@ -253,7 +253,9 @@ Directives:
 
 ---
 
-#### - [ ] **Day 17: Generic Input Handler Logic**
+#### - [x] **Day 17: Generic Input Handler Logic** *(Completed)*
+- **Commit**: `be57fb4` (pushed to `feat/day-17-input-handler`)
+- **Directives Completed**: Created `js/input-handler.js` implementing a decoupled InputHandler class with WASD / Arrow keys and touch swipe/tap gesture tracking, consolidated states and normalized continuous 2D axes into an input object, integrated input lifecycle into `js/game-engine.js`, updated `#canvas-input-badge` telemetry in `index.html`, and added mobile touch overrides in `css/style.css`; pushed to feature branch.
 ```markdown
 @coordinator @gsd-executor
 Objective: Implement an input handler class.
