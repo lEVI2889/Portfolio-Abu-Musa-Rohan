@@ -7,7 +7,7 @@ Every day on schedule, the Antigravity scheduled automation runs the designated 
 ---
 
 ## 📊 Progress Dashboard
-- **Current Streak State**: Day 20 Active (Day 19 Complete)
+- **Current Streak State**: Day 21 Active (Day 20 Complete)
 - **Repository**: `https://github.com/lEVI2889/Portfolio-Abu-Musa-Rohan.git`
 - **Schedule**: Every 15 minutes catch-up loop (`CRON_TZ=Asia/Dhaka */15 * * * *`, daily target: 10:00 PM)
 - **Review Target**: Remote Feature Branches (`feat/day-<N>-<slug>`)
@@ -298,7 +298,9 @@ Directives:
 
 ---
 
-#### - [ ] **Day 20: Base Generic Entity Class**
+#### - [x] **Day 20: Base Generic Entity Class** *(Completed)*
+- **Commit**: `19645e6` (pushed to `feat/day-20-base-entity`)
+- **Directives Completed**: Created `js/entity.js` with generic `Entity` class featuring `x`, `y`, `width`, `height` spatial properties, velocity, lifecycle states, AABB collision helpers, and extensible empty `update` / `draw` methods; integrated entity management and lifecycle execution into `GameEngine` in `js/game-engine.js`; linked script in `index.html`; pushed to feature branch.
 ```markdown
 @coordinator @gsd-executor
 Objective: Establish a base Entity class.
