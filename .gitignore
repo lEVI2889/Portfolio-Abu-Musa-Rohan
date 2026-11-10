@@ -1,5 +1,6 @@
 .streak_state.json
 scripts/
+.streak/
 .DS_Store
 __pycache__/
 *.pyc
